@@ -75,7 +75,7 @@ const RangeSlider = ({
             priceChange(minValue, maxValue);
           }}
         >
-          Apply
+          Aplicar filtro
         </button>
       )}
     </div>

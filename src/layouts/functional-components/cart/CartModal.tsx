@@ -93,7 +93,7 @@ const CartModal: React.FC = () => {
         className={`fixed inset-y-0 right-0 z-50 w-full md:w-[390px] transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="h-fit flex flex-col border-l border-b drop-shadow-lg rounded-bl-md border-neutral-200 bg-body p-6 text-black dark:border-neutral-700 dark:bg-darkmode-body dark:text-white">
+        <div className="h-full flex flex-col border-l border-b drop-shadow-lg rounded-bl-md border-neutral-200 bg-body p-6 text-black dark:border-neutral-700 dark:bg-darkmode-body dark:text-white">
           <div className="flex items-center justify-between">
             <p className="text-lg font-semibold">Tu carrito</p>
             <button aria-label="Close cart" onClick={closeCart}>
@@ -114,8 +114,8 @@ const CartModal: React.FC = () => {
               </a>
             </div>
           ) : (
-            <div className="flex h-full flex-col justify-between overflow-hidden p-1">
-              <ul className="flex-grow overflow-auto py-4">
+            <div className="flex h-full flex-col justify-between overflow-auto p-1">
+              <ul className="flex-grow overflow-auto py-4 mt-2">
                 {currentCart.lines.map((item: any) => {
                   const merchandiseSearchParams: Record<string, string> = {};
                   item.merchandise.selectedOptions.forEach(
