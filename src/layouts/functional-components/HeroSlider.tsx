@@ -38,7 +38,7 @@ const HeroSlider = ({ products }: { products: Product[] }) => {
                       className="btn btn-sm md:btn-lg btn-primary font-medium"
                       href={`products/${item.handle}`}
                     >
-                      Shop Now
+                      Compra ahora
                     </a>
                   )}
                 </div>

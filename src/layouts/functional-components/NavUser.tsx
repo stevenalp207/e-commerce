@@ -82,8 +82,8 @@ const NavUser = ({ pathname }: { pathname: string }) => {
       ) : (
         <a
           className="text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white flex items-center"
-          href="/login"
-          aria-label="login"
+          href="/iniciar-sesion"
+          aria-label="Iniciar sesión"
         >
           <BsPerson className="dark:hover:text-darkmode-primary" />
         </a>

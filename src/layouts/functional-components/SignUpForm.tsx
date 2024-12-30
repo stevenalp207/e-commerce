@@ -34,7 +34,7 @@ const SignUpForm = () => {
       form.append("email", formData.email);
       form.append("password", formData.password);
 
-      const response = await fetch("/api/sign-up", {
+      const response = await fetch("/api/registrarse", {
         method: "POST",
         body: form, // Use FormData
       });
@@ -71,17 +71,17 @@ const SignUpForm = () => {
         <div className="row">
           <div className="col-11 sm:col-9 md:col-7 mx-auto">
             <div className="mb-14 text-center">
-              <h2 className="max-md:h1 md:mb-2">Create an account</h2>
-              <p className="md:text-lg">Create an account and start using...</p>
+              <h2 className="max-md:h1 md:mb-2">Crear una cuenta</h2>
+              <p className="md:text-lg">Crea una cuenta para comprar productos</p>
             </div>
 
             <form onSubmit={handleSignUp}>
               <div>
-                <label className="form-label">Name</label>
+                <label className="form-label">Nombre</label>
                 <input
                   name="firstName"
                   className="form-input"
-                  placeholder="Enter your name"
+                  placeholder="Escribe tu nombre"
                   type="text"
                   onChange={handleChange}
                   value={formData.firstName}
@@ -90,11 +90,11 @@ const SignUpForm = () => {
               </div>
 
               <div>
-                <label className="form-label mt-8">Email Address</label>
+                <label className="form-label mt-8">Correo electrónico</label>
                 <input
                   name="email"
                   className="form-input"
-                  placeholder="Type your email"
+                  placeholder="Escribe tu correo"
                   type="email"
                   onChange={handleChange}
                   value={formData.email}
@@ -103,7 +103,7 @@ const SignUpForm = () => {
               </div>
 
               <div>
-                <label className="form-label mt-8">Password</label>
+                <label className="form-label mt-8">Contraseña</label>
                 <input
                   name="password"
                   className="form-input"
@@ -136,25 +136,25 @@ const SignUpForm = () => {
 
             <div className="flex gap-x-2 text-sm md:text-base mt-6">
               <p className="text-light dark:text-darkmode-light">
-                I have read and agree to the
+              He leído y acepto los
               </p>
               <a
                 className="underline font-medium text-dark dark:text-darkmode-dark"
                 href="/terms-services"
               >
-                Terms & Conditions
+                Términos y Condiciones
               </a>
             </div>
 
             <div className="flex gap-x-2 text-sm md:text-base mt-2">
               <p className="text-light dark:text-darkmode-light">
-                Have an account?
+                ¿Ya tienes una cuenta?
               </p>
               <a
                 className="underline font-medium text-dark dark:text-darkmode-dark"
-                href="/login"
+                href="/iniciar-sesion"
               >
-                Login
+                Inicia sesión
               </a>
             </div>
           </div>

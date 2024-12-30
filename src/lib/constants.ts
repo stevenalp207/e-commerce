@@ -6,7 +6,7 @@ export type SortFilterItem = {
 };
 
 export const defaultSort: SortFilterItem = {
-  title: "Relevance",
+  title: "Relevancia",
   slug: null,
   sortKey: "CREATED_AT",
   reverse: false,
@@ -15,25 +15,25 @@ export const defaultSort: SortFilterItem = {
 export const sorting: SortFilterItem[] = [
   defaultSort,
   {
-    title: "Trending",
+    title: "Tendencia",
     slug: "trending-desc",
     sortKey: "BEST_SELLING",
     reverse: false,
   }, // asc
   {
-    title: "Latest arrivals",
+    title: "Ultimas llegadas",
     slug: "latest-desc",
     sortKey: "CREATED_AT",
     reverse: true,
   },
   {
-    title: "Price: Low to high",
+    title: "Precio: más bajo a alto",
     slug: "price-asc",
     sortKey: "PRICE",
     reverse: false,
   }, // asc
   {
-    title: "Price: High to low",
+    title: "Precio: Más alto a bajo",
     slug: "price-desc",
     sortKey: "PRICE",
     reverse: true,
@@ -41,9 +41,9 @@ export const sorting: SortFilterItem[] = [
 ];
 
 export const TAGS = {
-  collections: "collections",
-  products: "products",
-  cart: "cart",
+  collections: "Colecciones",
+  products: "Productos",
+  cart: "Carrito",
 };
 
 export const HIDDEN_PRODUCT_TAG = "nextjs-frontend-hidden";

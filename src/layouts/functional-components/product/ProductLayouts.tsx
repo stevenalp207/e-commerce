@@ -65,7 +65,7 @@ const ProductLayouts = ({
             <div className="flex justify-between items-center mb-4">
               <div className="flex gap-x-4 items-center font-medium text-xs md:text-base">
                 <p className="max-md:hidden text-dark dark:text-darkmode-dark">
-                  Views
+                  Vistas
                 </p>
                 <div className="flex gap-2">
                   <button
@@ -102,7 +102,7 @@ const ProductLayouts = ({
 
                 <div className="flex gap-x-4 items-center font-medium text-sm md:text-base relative z-20">
                   <p className="max-md:hidden text-dark dark:text-darkmode-dark">
-                    Sort By
+                    Filtrar por
                   </p>
                   <DropdownMenu list={sorting} />
                 </div>

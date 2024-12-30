@@ -32,7 +32,7 @@ function SubmitButton({
         aria-disabled
         className={`${buttonClasses} ${disabledClasses}`}
       >
-        Out Of Stock
+        ¡Agotado!
       </button>
     );
   }
@@ -53,7 +53,7 @@ function SubmitButton({
   return (
     <button
       onClick={onClick}
-      aria-label="Add to cart"
+      aria-label="Añade al carrito"
       aria-disabled={pending ? "true" : "false"}
       className={`${buttonClasses}`}
     >
@@ -63,7 +63,7 @@ function SubmitButton({
           size={26}
         />
       ) : (
-        "Add To Cart"
+        "Añade al carrito"
       )}
     </button>
   );

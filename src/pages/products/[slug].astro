@@ -125,7 +125,7 @@ const { currencySymbol } = config.shopify;
           <hr class="my-6 border border-border dark:border-light" />
 
           <div class="flex gap-3 items-center mb-6">
-            <h5 class="max-md:text-base">Share:</h5>
+            <h5 class="max-md:text-base">Comparte:</h5>
             <SocialShare
               socialName={title}
               className="social-icons"
@@ -137,7 +137,7 @@ const { currencySymbol } = config.shopify;
           {
             tags.length > 0 && (
               <div class="flex flex-wrap gap-3 items-center">
-                <h5 class="max-md:text-base">Tags:</h5>
+                <h5 class="max-md:text-base">Etiquetas:</h5>
                 <ShowTags client:only="react" tags={tags} />
               </div>
             )
@@ -169,7 +169,7 @@ const { currencySymbol } = config.shopify;
         relatedProducts?.length > 0 && (
           <>
             <div class="text-center mb-6 md:mb-14">
-              <h2 class="mb-2">Related Products</h2>
+              <h2 class="mb-2">Productos relacionados</h2>
             </div>
             <FeaturedProducts products={relatedProducts.slice(0, 4)} />
           </>

@@ -9,18 +9,18 @@ import { BiLoaderAlt } from "react-icons/bi";
       <div class="row">
         <div class="col-11 sm:col-9 md:col-7 mx-auto">
           <div class="mb-14 text-center">
-            <h2 class="max-md:h1 md:mb-2">Login</h2>
+            <h2 class="max-md:h1 md:mb-2">Iniciar Sesión</h2>
             <p class="md:text-lg">
-              Please fill your email and password to login
+              Por favor, rellene su correo electrónico y contraseña para iniciar sesión
             </p>
           </div>
 
           <form id="loginForm">
             <div>
-              <label class="form-label">Email Address</label>
+              <label class="form-label">Correo electrónico</label>
               <input
                 class="form-input"
-                placeholder="Type your email"
+                placeholder="Escribre tu correo"
                 type="email"
                 name="email"
                 required
@@ -28,7 +28,7 @@ import { BiLoaderAlt } from "react-icons/bi";
             </div>
 
             <div>
-              <label class="form-label mt-8">Password</label>
+              <label class="form-label mt-8">Contraseña</label>
               <input
                 class="form-input"
                 placeholder="********"
@@ -44,7 +44,7 @@ import { BiLoaderAlt } from "react-icons/bi";
               type="submit"
               class="btn btn-primary md:text-lg md:font-medium w-full mt-10"
             >
-              <span id="buttonText">Log In</span>
+              <span id="buttonText">Iniciar sesión</span>
               <BiLoaderAlt
                 className="animate-spin mx-auto hidden"
                 size={26}
@@ -55,13 +55,13 @@ import { BiLoaderAlt } from "react-icons/bi";
 
           <div class="flex gap-x-2 text-sm md:text-base mt-4">
             <p class="text-light dark:text-darkmode-light">
-              Don't have an account?
+              ¿No tienes una cuenta?
             </p>
             <a
               class="underline font-medium text-dark dark:text-darkmode-dark"
-              href="/sign-up"
+              href="/registrarse"
             >
-              Register
+              Regístrate
             </a>
           </div>
         </div>
