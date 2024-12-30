@@ -13,12 +13,12 @@
     {
       "name": "linkedin",
       "icon": "FaLinkedinIn",
-      "link": "https://bd.linkedin.com/company/themefisher"
+      "link": "https://bd.linkedin.com/company/styleup"
     },
     {
       "name": "github",
       "icon": "FaGithub",
-      "link": "https://github.com/themefisher/astrofront"
+      "link": "https://github.com/themefisher/styleup"
     }
   ]
 }

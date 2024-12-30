@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Style-UP",
-    "base_url": "https://styleup.vercel.app/",
+    "base_url": "https://styleup-cr.vercel.app/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
