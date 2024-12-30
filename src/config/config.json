@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Astrofront",
+    "title": "Style-UP",
     "base_url": "https://astrofront.vercel.app/",
     "base_path": "/",
     "trailing_slash": false,
@@ -9,7 +9,7 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "33",
-    "logo_text": "Astrofront"
+    "logo_text": "Style-UP"
   },
 
   "settings": {
@@ -22,7 +22,7 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Themefisher](https://themefisher.com/)"
+    "copyright": "Developed by Steven Alpízar"
   },
 
   "navigation_button": {
@@ -38,8 +38,8 @@
   },
 
   "shopify": {
-    "currencySymbol": "৳",
-    "currencyCode": "BDT",
+    "currencySymbol": "₡",
+    "currencyCode": "CRC",
     "collections": {
       "hero_slider": "hidden-homepage-carousel",
       "featured_products": "featured-products"
