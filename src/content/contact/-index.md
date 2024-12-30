@@ -1,20 +1,20 @@
 ---
-title: "Connect with Us"
+title: "Contacta con nosotros"
 meta_title: ""
 description: "this is meta description"
 draft: false
 
 #Contact Options
 contact_meta:
-  - name: "Address"
-    contact: "123 Main Street, Anytown, </br> CA 12345 - USA"
+  - name: "Dirección"
+    contact: "Desamparados, San José"
 
   - name: "Email"
-    contact: "yourmail@domain.com </br> support@domain.com"
+    contact: "snaks20@hotmail.com"
 
   - name: "Phone"
-    contact: "Mobile: (08) 123 456 789 </br> Hotline: 1009 678 456"
+    contact: "Whatsapp/Llamadas: +506 71903969"
 
-  - name: "Shop Time"
-    contact: "Available at 10am-8pm </br>"
+  - name: "Horario de atención"
+    contact: "Disponible de 8am-8pm </br>"
 ---

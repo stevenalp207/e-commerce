@@ -43,8 +43,37 @@ const CartModal: React.FC = () => {
     document.body.style.overflow = ""; // Re-enable scrolling when the cart is closed
   };
 
+  // Crear el mensaje para WhatsApp con más detalles (como una factura)
+  const createWhatsAppMessage = () => {
+    if (!currentCart) return "";
+  
+    const productList = currentCart.lines.map((item: any) => {
+      const productTitle = item.merchandise.product.title;
+      const productQuantity = item.quantity;
+      const productPrice = item.cost.totalAmount.amount; // Precio total del artículo
+      const currencyCode = item.cost.totalAmount.currencyCode;
+  
+      return `*${productTitle}* - *Cantidad:* ${productQuantity} - *Precio:* ${productPrice} ${currencyCode}`;
+    }).join("\n");
+  
+    const taxAmount = currentCart.cost.totalTaxAmount.amount;
+    const taxCurrency = currentCart.cost.totalTaxAmount.currencyCode;
+    const shippingAmount = 0;
+    const shippingCurrency = taxCurrency;
+    const totalAmount = currentCart.cost.totalAmount.amount;
+    const totalCurrency = currentCart.cost.totalAmount.currencyCode;
+  
+    // Mensaje personalizado con la negrita y resumen de la factura solo con el total
+    return `¡Hola! Quiero comprar los siguientes productos:\n\n${productList}\n\n---\n\n*Resumen de la factura:*\n\n*Total:* ${totalAmount} ${totalCurrency}\n\n*¡Gracias por tu atención!*`;
+  };
+  
+
   if (loading) return <LoadingDots className="bg-black dark:bg-white" />;
   if (!currentCart) return <OpenCart quantity={quantity} />;
+
+  // Número de WhatsApp (ajústalo con el número de la dueña)
+  const whatsAppNumber = "+50670112732";
+  const message = createWhatsAppMessage();
 
   return (
     <>
@@ -97,15 +126,6 @@ const CartModal: React.FC = () => {
                     },
                   );
 
-                  // const merchandiseUrl = new URL(
-                  //   `/products/${item.merchandise.product.handle}`,
-                  //   window.location.origin,
-                  // );
-
-                  // merchandiseUrl.search = new URLSearchParams(
-                  //   merchandiseSearchParams,
-                  // ).toString();
-
                   const merchandiseUrl = createUrl(
                     `/products/${item.merchandise.product.handle}`,
                     new URLSearchParams(merchandiseSearchParams),
@@ -127,14 +147,8 @@ const CartModal: React.FC = () => {
                           <div className="relative h-16 w-16 overflow-hidden rounded-md border border-neutral-300 bg-neutral-300">
                             <img
                               className="h-full w-full object-cover"
-                              src={
-                                item.merchandise.product.featuredImage?.url ||
-                                "/images/product_image404.jpg"
-                              }
-                              alt={
-                                item.merchandise.product.featuredImage
-                                  ?.altText || item.merchandise.product.title
-                              }
+                              src={item.merchandise.product.featuredImage?.url || "/images/product_image404.jpg"}
+                              alt={item.merchandise.product.featuredImage?.altText || item.merchandise.product.title}
                               width={64}
                               height={64}
                             />
@@ -142,9 +156,7 @@ const CartModal: React.FC = () => {
                           <div className="flex flex-1 flex-col text-base">
                             <span>{item.merchandise.product.title}</span>
                             {item.merchandise.title !== DEFAULT_OPTION && (
-                              <p className="text-sm text-neutral-500">
-                                {item.merchandise.title}
-                              </p>
+                              <p className="text-sm text-neutral-500">{item.merchandise.title}</p>
                             )}
                           </div>
                         </a>
@@ -175,7 +187,7 @@ const CartModal: React.FC = () => {
                   />
                 </div>
                 <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
-                  <p>Envió</p>
+                  <p>Envio</p>
                   <p className="text-right">Calculado al finalizar</p>
                 </div>
                 <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
@@ -188,8 +200,9 @@ const CartModal: React.FC = () => {
                 </div>
               </div>
 
+              {/* Botón para redirigir a WhatsApp */}
               <a
-                href={currentCart.checkoutUrl}
+                href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`}
                 className="block w-full rounded-md bg-dark dark:bg-darkmode-dark p-3 text-center text-sm font-medium text-darkmode-light dark:text-dark opacity-90 hover:opacity-100"
               >
                 Pagar tu carrito
