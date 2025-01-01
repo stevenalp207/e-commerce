@@ -1,6 +1,6 @@
 ---
 title: "About Us"
-meta_title: "About"
+meta_title: "Sobre StyleUP"
 description: ""
 image: ""
 draft: false

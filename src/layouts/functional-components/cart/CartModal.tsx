@@ -108,8 +108,8 @@ const CartModal: React.FC = () => {
               <div className="md:mt-16">
                 <FaShoppingCart size={76} />
               </div>
-              <p>Oops. Tu carrito esta vació</p>
-              <a href="/products" className="btn btn-primary w-full">
+              <p>Oops. Tu carrito esta vacio</p>
+              <a href="/productos" className="btn btn-primary w-full">
                 No lo olvides. Añade productos
               </a>
             </div>
@@ -127,7 +127,7 @@ const CartModal: React.FC = () => {
                   );
 
                   const merchandiseUrl = createUrl(
-                    `/products/${item.merchandise.product.handle}`,
+                    `/productos/${item.merchandise.product.handle}`,
                     new URLSearchParams(merchandiseSearchParams),
                   );
 

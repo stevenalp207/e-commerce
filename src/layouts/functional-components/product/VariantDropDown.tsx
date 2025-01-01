@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 const VariantDropDown = ({ sizeOption }: any) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState("Select One");
+  const [selected, setSelected] = useState("Seleccione una opción");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const updateUrl = (param: string, value: string) => {

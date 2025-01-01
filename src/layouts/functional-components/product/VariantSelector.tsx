@@ -145,7 +145,7 @@ export function VariantSelector({ options, variants, images }: {
 
       {sizeOption && (
         <div className="mb-8 mt-8">
-          <h5 className="mb-2 max-md:text-base">{sizeOption.name}</h5>
+        <h5 className="mb-2 max-md:text-base">{sizeOption.name === "Size" ? "Tamaño" : sizeOption.name}</h5>
           <VariantDropDown
             sizeOption={sizeOption}
             selectedSize={selectedOptions.size}

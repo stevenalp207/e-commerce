@@ -37,7 +37,7 @@ const RangeSlider = ({
     searchParams.set("minPrice", min.toString());
     searchParams.set("maxPrice", max.toString());
 
-    const newUrl = createUrl("/products", searchParams);
+    const newUrl = createUrl("/productos", searchParams);
     window.location.href = newUrl.toString();
   }
 

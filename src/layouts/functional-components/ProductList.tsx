@@ -38,7 +38,7 @@ const ProductList = ({
     setLoading(true);
     try {
       const response = await fetch(
-        `/api/products.json?cursor=${pageInfo.endCursor || ''}&sortKey=${currentSortKey}&reverse=${currentReverse}`
+        `/api/productos.json?cursor=${pageInfo.endCursor || ''}&sortKey=${currentSortKey}&reverse=${currentReverse}`
       );
       if (!response.ok) throw new Error('Failed to fetch');
       const { products: newProducts, pageInfo: newPageInfo } = await response.json();
@@ -113,7 +113,7 @@ const ProductList = ({
       {searchValue ? (
         <p className="mb-4">
           {products.length === 0
-            ? "There are no products that match "
+            ? "No hay productos que coincidan con "
             : `Showing ${products.length} ${resultsText} for `}
           <span className="font-bold">&quot;{searchValue}&quot;</span>
         </p>
@@ -128,9 +128,9 @@ const ProductList = ({
             width={211}
             height={184}
           />
-          <h1 className="h2 mb-4">No Product Found!</h1>
+          <h1 className="h2 mb-4">¡Producto no encontrado!</h1>
           <p>
-            We couldn&apos;t find what you filtered for. Try filtering again.
+            Lo sentimos, no pudimos encontrar el producto que buscabas. Intenta buscar otro.
           </p>
         </div>
       )}
@@ -167,7 +167,7 @@ const ProductList = ({
 
                 <div className="col-8 py-3 max-md:pt-4">
                   <h2 className="font-bold md:font-normal h4">
-                    <a href={`/products/${handle}`}>{title}</a>
+                    <a href={`/productos/${handle}`}>{title}</a>
                   </h2>
 
                   <div className="flex items-center gap-x-2 mt-2">
@@ -209,7 +209,7 @@ const ProductList = ({
 
       {pageInfo?.hasNextPage && (
         <div ref={loaderRef} className="text-center py-4">
-          {loading ? <BiLoaderAlt className={`animate-spin`} size={30} /> : 'Scroll for more'}
+          {loading ? <BiLoaderAlt className={`animate-spin`} size={30} /> : 'Baja para ver más'}
         </div>
       )}
     </div>

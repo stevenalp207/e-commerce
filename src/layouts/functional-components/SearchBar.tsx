@@ -20,7 +20,7 @@ const SearchBar = () => {
   }, [isInputEditing]);
 
   const updateURL = (query: string) => {
-    const newURL = query ? `/products?q=${encodeURIComponent(query)}` : '/products';
+    const newURL = query ? `/productos?q=${encodeURIComponent(query)}` : '/productos';
     // window.history.pushState({}, '', newURL);
     window.location.href = newURL.toString();
   };

@@ -90,11 +90,11 @@ const ProductLayouts = ({
                   <button {...getToggleProps()}>
                     {isExpanded ? (
                       <span className="font-medium text-base flex gap-x-1 items-center justify-center">
-                        <TbFilterX /> Filter
+                        <TbFilterX /> Filtros
                       </span>
                     ) : (
                       <span className="font-medium text-base flex gap-x-1 items-center justify-center">
-                        <TbFilter /> Filter
+                        <TbFilter /> Filtros
                       </span>
                     )}
                   </button>

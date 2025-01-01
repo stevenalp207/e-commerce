@@ -1,17 +1,9 @@
 ---
 payment_methods:
-  - name: "Visa"
+  - name: "Sinpe Movil"
     image_url: "/images/payment/visa.png"
   - name: "MasterCard"
     image_url: "/images/payment/mastercard.png"
-  - name: "Express"
-    image_url: "/images/payment/express.png"
-  - name: "Bkash"
-    image_url: "/images/payment/bkash.png"
-  - name: "Nagad"
-    image_url: "/images/payment/nagad.png"
-  - name: "Upay"
-    image_url: "/images/payment/upay.png"
 
 estimated_delivery: "Envió estimado: 0-3 días hábiles"
 ---

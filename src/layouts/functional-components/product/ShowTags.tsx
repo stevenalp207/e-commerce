@@ -10,8 +10,8 @@ const ShowTags = ({ tags }: { tags: string[] }) => {
   const updateSearchParams = (newParams: URLSearchParams) => {
     const newParamsString = newParams.toString();
     const newURL = newParamsString
-      ? `/products?${newParamsString}`
-      : "/products";
+      ? `/productos?${newParamsString}`
+      : "/productos";
 
     window.location.href = newURL.toString();
     setSearchParams(newParams);

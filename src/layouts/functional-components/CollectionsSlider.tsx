@@ -76,7 +76,7 @@ const CollectionsSlider = ({ collections }: { collections: any }) => {
                   <h3 className="mb-2 font-medium h4">
                     <a
                       className="after:absolute after:inset-0"
-                      href={`/products?c=${handle}`}
+                      href={`/productos?c=${handle}`}
                     >
                       {title}
                     </a>
