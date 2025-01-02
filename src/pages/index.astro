@@ -1,4 +1,5 @@
 ---
+// Importación de componentes y configuración
 import FeaturedProducts from "@/components/FeaturedProducts.astro";
 import config from "@/config/config.json";
 import CollectionsSlider from "@/functional-components/CollectionsSlider";
@@ -9,15 +10,16 @@ import HeroSlider from "src/layouts/functional-components/HeroSlider";
 
 const { collections } = config.shopify;
 
-// Fetch slider images for the HeroSlider
+// Fetch de los productos del HeroSlider
 const sliderImages = await getCollectionProducts({
   collection: collections.hero_slider,
 });
 const heroProducts = sliderImages.products;
 
+// Obtener las colecciones disponibles
 const collectionProducts = await getCollections();
 
-// Fetch featured products
+// Fetch de los productos destacados, asegurando que solo se muestren en la sección correspondiente
 const { products: featuredProducts } = await getCollectionProducts({
   collection: collections.featured_products,
   reverse: false,
@@ -33,23 +35,25 @@ const { products: featuredProducts } = await getCollectionProducts({
     </div>
   </section>
 
-  {/* category section */}
+  {/* Sección de Colecciones */}
   <section class="section">
     <div class="container">
       <div class="text-center mb-6 md:mb-14">
         <h2>Colecciones</h2>
       </div>
-      <CollectionsSlider client:load collections={collectionProducts} />
+      {/* Filtrar productos para asegurarse de que los productos destacados no aparezcan aquí */}
+      <CollectionsSlider client:load collections={collectionProducts.filter(collection => collection.handle !== collections.featured_products)} />
     </div>
   </section>
 
-  {/* Featured Products section */}
+  {/* Sección de Productos Destacados */}
   <section>
     <div class="container">
       <div class="text-center mb-6 md:mb-14">
         <h2 class="mb-2">Productos destacados</h2>
         <p class="md:h5">¡Explora los productos destacados del mes!</p>
       </div>
+      {/* Mostrar solo los productos destacados aquí */}
       <FeaturedProducts products={featuredProducts} />
     </div>
   </section>

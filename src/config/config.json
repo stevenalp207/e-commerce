@@ -41,8 +41,8 @@
     "currencySymbol": "₡",
     "currencyCode": "CRC",
     "collections": {
-      "hero_slider": "productos-inicio",
-      "featured_products": "productos-destacadas"
+      "hero_slider": "hidden-homepage-carousel",
+      "featured_products": "featured-products"
     }
   }
 }

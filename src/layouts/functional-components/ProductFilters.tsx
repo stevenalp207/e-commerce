@@ -69,7 +69,7 @@ const ProductFilters = ({
       </div>
 
       <div>
-        <h5 className="mb-2 mt-4 lg:mt-6 lg:text-xl">Categorias de Productos</h5>
+        <h5 className="mb-2 mt-4 lg:mt-6 lg:text-xl">Categorías de Productos</h5>
         <hr className="dark:border-darkmode-border" />
         <ul className="mt-4 space-y-4">
           {categories.map((category) => (
@@ -81,7 +81,8 @@ const ProductFilters = ({
                 }`}
               onClick={() => handleCategoryClick(category.handle)}
             >
-              {category.title}
+              {category.handle === "featured-products" ? "Productos destacados" : category.title}
+              
               {searchParams.has("c") && !searchParams.has("b") ? (
                 <span>({category?.products?.edges.length || 0})</span>
               ) : (
@@ -98,6 +99,7 @@ const ProductFilters = ({
           ))}
         </ul>
       </div>
+
 
       {vendors && (
         <div>
