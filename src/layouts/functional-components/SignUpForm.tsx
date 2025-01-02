@@ -140,7 +140,7 @@ const SignUpForm = () => {
               </p>
               <a
                 className="underline font-medium text-dark dark:text-darkmode-dark"
-                href="/terms-services"
+                href="/terminos-servicios"
               >
                 Términos y Condiciones
               </a>

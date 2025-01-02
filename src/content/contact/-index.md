@@ -10,7 +10,7 @@ contact_meta:
     contact: "Desamparados, San José"
 
   - name: "Email"
-    contact: "snaks20@hotmail.com"
+    contact: "styleupcostarica@gmail.com"
 
   - name: "Phone"
     contact: "Whatsapp/Llamadas: +506 71903969"

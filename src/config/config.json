@@ -7,8 +7,8 @@
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
-    "logo_height": "33",
+    "logo_width": "180",
+    "logo_height": "39.6",
     "logo_text": "Style-UP"
   },
 
@@ -22,27 +22,27 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Developed by Steven Alpízar"
+    "copyright": "Desarollada por Steven Alpízar"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Get Started",
-    "link": "https://github.com/themefisher/astrofront"
+    "label": "Ver productos",
+    "link": "https://styleup-cr.vercel.app/productos"
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "StyleUP Costa Rica",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Shopify Storefront Boilerplate"
+    "meta_description": "Descubre nuestra tienda de productos personalizados. Encuentra regalos únicos para cada ocasión."
   },
 
   "shopify": {
     "currencySymbol": "₡",
     "currencyCode": "CRC",
     "collections": {
-      "hero_slider": "hidden-homepage-carousel",
-      "featured_products": "featured-products"
+      "hero_slider": "productos-inicio",
+      "featured_products": "productos-destacadas"
     }
   }
 }

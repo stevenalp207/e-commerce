@@ -1,6 +1,11 @@
 {
   "main": [
     {
+      "name": "Instagram",
+      "icon": "FaInstagram",
+      "link": "https://www.facebook.com/themefisher"
+    },
+    {
       "name": "facebook",
       "icon": "FaFacebookF",
       "link": "https://www.facebook.com/themefisher"
@@ -9,16 +14,6 @@
       "name": "twitter",
       "icon": "FaXTwitter",
       "link": "https://x.com/themefisher"
-    },
-    {
-      "name": "linkedin",
-      "icon": "FaLinkedinIn",
-      "link": "https://bd.linkedin.com/company/styleup"
-    },
-    {
-      "name": "github",
-      "icon": "FaGithub",
-      "link": "https://github.com/themefisher/styleup"
     }
   ]
 }
