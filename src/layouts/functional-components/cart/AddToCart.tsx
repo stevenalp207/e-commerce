@@ -53,7 +53,7 @@ function SubmitButton({
   return (
     <button
       onClick={onClick}
-      aria-label="Añade al carrito"
+      aria-label="Añadir al carrito"
       aria-disabled={pending ? "true" : "false"}
       className={`${buttonClasses}`}
     >
@@ -63,7 +63,7 @@ function SubmitButton({
           size={26}
         />
       ) : (
-        "Añade al carrito"
+        "Añadir al carrito"
       )}
     </button>
   );

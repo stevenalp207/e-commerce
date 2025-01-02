@@ -35,7 +35,7 @@ const Tabs = ({ descriptionHtml }: { descriptionHtml: string }) => {
               : "border-transparent"
               } cursor-pointer focus:outline-none px-6 rounded-tl-md rounded-tr-md h-12 py-2 border-t-2 border-l-2 border-r-2 border-b-0 ml-8`}
           >
-            Más información
+            Más info
           </button>
         )}
       </div>
