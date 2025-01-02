@@ -64,6 +64,7 @@ To place products on the homepage or mark them as featured, you should include t
 
 If you need to add extra information to the product details, you can include it by using the following content structure:
 
+```json
 --- split content ---
 ```
 
