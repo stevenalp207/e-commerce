@@ -92,7 +92,7 @@ const NavUser = ({ pathname }: { pathname: string }) => {
       {dropdownOpen && (
         <div className="z-20 text-center absolute w-full bg-white shadow-md rounded mt-2">
           <button onClick={handleLogout} className="btn btn-primary max-md:btn-sm mt-2">
-            Logout
+            Cerrar sesión
           </button>
         </div>
       )}

@@ -9,7 +9,7 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "180",
     "logo_height": "39.6",
-    "logo_text": "Style-UP"
+    "logo_text": "StyleUP"
   },
 
   "settings": {
@@ -27,14 +27,15 @@
 
   "navigation_button": {
     "enable": true,
-    "label": "Ver productos",
+    "label": "Descubre nuestros productos",
     "link": "https://styleup-cr.vercel.app/productos"
   },
 
   "metadata": {
     "meta_author": "StyleUP Costa Rica",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "Descubre nuestra tienda de productos personalizados. Encuentra regalos únicos para cada ocasión."
+    "meta_image": "/images/logo-darkmode.png",
+    "meta_description": "Style-UP: Regalos personalizados en Costa Rica. Diseña y descubre productos únicos para cada ocasión con envío rápido y calidad garantizada.",
+    "meta_keywords": "regalos personalizados, Style-UP, Costa Rica, regalos únicos, regalos creativos, tienda online" 
   },
 
   "shopify": {
