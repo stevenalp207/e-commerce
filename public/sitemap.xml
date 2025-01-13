@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://styleup-cr.vercel.app/</loc>
+  <lastmod>2025-01-13T01:00:52+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://styleup-cr.vercel.app/productos</loc>
+  <lastmod>2025-01-13T01:00:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://styleup-cr.vercel.app/contacto</loc>
+  <lastmod>2025-01-13T01:00:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://styleup-cr.vercel.app/iniciar-sesion</loc>
+  <lastmod>2025-01-13T01:00:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://styleup-cr.vercel.app/StyleUP</loc>
+  <lastmod>2025-01-13T01:00:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://styleup-cr.vercel.app/politica-privacidad</loc>
+  <lastmod>2025-01-13T01:00:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://styleup-cr.vercel.app/terminos-servicios</loc>
+  <lastmod>2025-01-13T01:00:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://styleup-cr.vercel.app/registrarse</loc>
+  <lastmod>2025-01-13T01:00:52+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

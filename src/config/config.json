@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Style-UP",
+    "title": "StyleUP",
     "base_url": "https://styleup-cr.vercel.app/",
     "base_path": "/",
     "trailing_slash": false,
