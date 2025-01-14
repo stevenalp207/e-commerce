@@ -5,5 +5,5 @@ payment_methods:
   - name: "MasterCard"
     image_url: "/images/payment/mastercard.png"
 
-estimated_delivery: "Envió estimado: 0-3 días hábiles"
+estimated_delivery: "Envio estimado: 0-3 días hábiles"
 ---

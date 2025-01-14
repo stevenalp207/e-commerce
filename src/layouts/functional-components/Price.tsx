@@ -10,7 +10,7 @@ interface PriceProps {
 const Price: React.FC<PriceProps> = ({
   amount,
   className = "",
-  currencyCode = "USD",
+  currencyCode = "CRC",
   currencyCodeClassName = "",
 }) => {
   const formattedAmount = new Intl.NumberFormat(undefined, {

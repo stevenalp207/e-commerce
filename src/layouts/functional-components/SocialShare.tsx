@@ -79,7 +79,7 @@ const SocialShare: React.FC<{ socialName: string; className: string; pathname: s
                 className="inline-block text-green-500"
                 icon={"FaLink"}
               />{" "}
-              copied!
+              copiado!
             </span>
           )}
           <DynamicIcon className="inline-block" icon={"FaRegCopy"} />

@@ -12,8 +12,8 @@ contact_meta:
   - name: "Email"
     contact: "styleupcostarica@gmail.com"
 
-  - name: "Phone"
-    contact: "Whatsapp/Llamadas: +506 71903969"
+  - name: "Whatsapp/Llamadas"
+    contact: "+506 71903969"
 
   - name: "Horario de atención"
     contact: "Disponible de 8am-8pm </br>"
