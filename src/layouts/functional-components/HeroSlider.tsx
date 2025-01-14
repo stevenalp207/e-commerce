@@ -36,7 +36,7 @@ const HeroSlider = ({ products }: { products: Product[] }) => {
                   {item.handle && (
                     <a
                       className="btn btn-sm md:btn-lg btn-primary font-medium"
-                      href={`products/${item.handle}`}
+                      href={`productos/${item.handle}`}
                     >
                       Compra ahora
                     </a>
