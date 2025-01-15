@@ -38,6 +38,7 @@ const NavUser = ({ pathname }: { pathname: string }) => {
     Cookies.remove("token");
     localStorage.removeItem("user");
     setUser(null);
+    setDropdownOpen(false);
   };
 
   const toggleDropdown = () => {

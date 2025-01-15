@@ -140,6 +140,7 @@ const SignUpForm = () => {
                     type="button"
                     onClick={toggleShowPassword}
                     className="absolute right-3 text-gray-500"
+                    aria-label="Mostrar contraseña"
                   >
                     {showPassword ? <FiEyeOff size={25} /> : <FiEye size={25} />}
                   </button>
