@@ -60,9 +60,6 @@ const NavUser = ({ pathname }: { pathname: string }) => {
             </div>
             <div className="leading-none max-md:hidden">
               <div className="flex items-center">
-                <p className="block text-dark dark:text-darkmode-dark text-base truncate">
-                  {user?.firstName}
-                </p>
                 <svg
                   className={`w-5 text-dark dark:text-darkmode-dark dark:hover:text-darkmode-primary`}
                   fill="currentColor"
@@ -90,7 +87,7 @@ const NavUser = ({ pathname }: { pathname: string }) => {
       )}
 
       {dropdownOpen && (
-        <div className="z-20 text-center absolute w-full bg-white shadow-md rounded mt-2">
+        <div className="z-20 text-center absolute w-36 bg-white dark:bg-[#252525] shadow-md rounded mt-2 right-0">
           <button onClick={handleLogout} className="btn btn-primary max-md:btn-sm mt-2">
             Cerrar sesión
           </button>

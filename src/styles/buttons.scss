@@ -12,7 +12,7 @@
 }
 
 .btn-primary {
-  @apply border-primary bg-primary text-white dark:border-darkmode-primary dark:bg-white dark:text-dark text-center;
+  @apply border-primary bg-primary text-white dark:border-darkmode-primary dark:bg-darkmode-primary dark:text-dark text-center;
 }
 
 .btn-outline-primary {

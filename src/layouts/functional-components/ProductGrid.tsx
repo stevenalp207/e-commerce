@@ -105,7 +105,7 @@ const ProductGrid = ({
     }
   }, [pageInfo?.endCursor, currentSortKey, currentReverse, sortChanged]);
 
-  const resultsText = products.length > 1 ? "results" : "result";
+  const resultsText = products.length > 1 ? "resultados" : "resultado";
 
   return (
     <div>
@@ -115,7 +115,7 @@ const ProductGrid = ({
           <p className="mb-4">
             {products.length === 0
               ? "No hay productos que coincidan con "
-              : `Showing ${products.length} ${resultsText} for `}
+              : `Mostrando ${products.length} ${resultsText} para `}
             <span className="font-bold">&quot;{searchValue}&quot;</span>
           </p>
         ) : null}

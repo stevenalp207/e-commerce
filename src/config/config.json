@@ -14,7 +14,7 @@
 
   "settings": {
     "search": true,
-    "account": false,
+    "account": true,
     "sticky_header": true,
     "theme_switcher": true,
     "default_theme": "system"

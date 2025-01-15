@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 export interface FormData {
   firstName?: string;
@@ -16,6 +17,7 @@ const SignUpForm = () => {
 
   const [loading, setLoading] = useState(false);
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -24,9 +26,12 @@ const SignUpForm = () => {
     });
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
       setLoading(true);
       const form = new FormData();
@@ -36,7 +41,7 @@ const SignUpForm = () => {
 
       const response = await fetch("/api/registrarse", {
         method: "POST",
-        body: form, // Use FormData
+        body: form,
       });
 
       const contentType = response.headers.get("content-type");
@@ -64,6 +69,23 @@ const SignUpForm = () => {
       setLoading(false);
     }
   };
+
+  const validatePassword = (password: string): string => {
+    if (password.length < 8) {
+      return "Recomendación: La contraseña debe tener al menos 8 caracteres.";
+    } else if (!/[A-Z]/.test(password)) {
+      return "Recomendación: La contraseña debe contener al menos una letra mayúscula.";
+    } else if (!/\d/.test(password)) {
+      return "Recomendación: La contraseña debe contener al menos un número.";
+    } else {
+      return "La contraseña es segura.";
+    }
+  };
+
+  const passwordFeedback = validatePassword(formData.password);
+
+  // Validar si la contraseña es segura
+  const isPasswordSecure = passwordFeedback === "La contraseña es segura.";
 
   return (
     <section className="section">
@@ -102,17 +124,33 @@ const SignUpForm = () => {
                 />
               </div>
 
-              <div>
+              <div className="relative">
                 <label className="form-label mt-8">Contraseña</label>
-                <input
-                  name="password"
-                  className="form-input"
-                  placeholder="********"
-                  type="password"
-                  onChange={handleChange}
-                  value={formData.password}
-                  required
-                />
+                <div className="flex items-center">
+                  <input
+                    name="password"
+                    className="form-input"
+                    placeholder="********"
+                    type={showPassword ? "text" : "password"}
+                    onChange={handleChange}
+                    value={formData.password}
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={toggleShowPassword}
+                    className="absolute right-3 text-gray-500"
+                  >
+                    {showPassword ? <FiEyeOff size={25} /> : <FiEye size={25} />}
+                  </button>
+                </div>
+                <p
+                  className={`mt-2 text-sm ${
+                    isPasswordSecure ? "text-green-500" : "text-red-500"
+                  }`}
+                >
+                  {passwordFeedback}
+                </p>
               </div>
 
               {errorMessages.length > 0 &&
@@ -125,18 +163,19 @@ const SignUpForm = () => {
               <button
                 type="submit"
                 className="btn btn-primary md:text-lg md:font-medium w-full mt-10"
+                disabled={!isPasswordSecure || loading}
               >
                 {loading ? (
                   <BiLoaderAlt className="animate-spin mx-auto" size={26} />
                 ) : (
-                  "Sign Up"
+                  "Registrarse"
                 )}
               </button>
             </form>
 
             <div className="flex gap-x-2 text-sm md:text-base mt-6">
               <p className="text-light dark:text-darkmode-light">
-              He leído y acepto los
+                He leído y acepto los
               </p>
               <a
                 className="underline font-medium text-dark dark:text-darkmode-dark"

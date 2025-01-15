@@ -114,7 +114,7 @@ const ProductList = ({
         <p className="mb-4">
           {products.length === 0
             ? "No hay productos que coincidan con "
-            : `Showing ${products.length} ${resultsText} for `}
+            : `Mostrando ${products.length} ${resultsText} para `}
           <span className="font-bold">&quot;{searchValue}&quot;</span>
         </p>
       ) : null}
