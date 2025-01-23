@@ -126,13 +126,13 @@ const ProductGallery = ({ images }: { images: ImageItem[] }) => {
           >
             <div
               ref={prevRef}
-              className="p-2 lg:p-4 rounded-md bg-body cursor-pointer shadow-sm absolute left-4"
+              className="p-2 lg:p-4 rounded-md bg-primary text-darkmode-dark dark:bg-darkmode-primary dark:text-dark cursor-pointer shadow-sm absolute left-4"
             >
               <HiOutlineArrowNarrowLeft size={24} />
             </div>
             <div
               ref={nextRef}
-              className="p-2 lg:p-4 rounded-md bg-body cursor-pointer shadow-sm absolute right-4"
+              className="p-2 lg:p-4 rounded-md bg-primary text-darkmode-dark dark:bg-darkmode-primary dark:text-dark cursor-pointer shadow-sm absolute right-4"
             >
               <HiOutlineArrowNarrowRight size={24} />
             </div>
@@ -152,7 +152,7 @@ const ProductGallery = ({ images }: { images: ImageItem[] }) => {
             <div
               onClick={() => handleThumbSlideClick(item.url)}
               className={`rounded-md cursor-pointer overflow-hidden ${picUrl === item.url
-                ? "border border-darkmode-border dark:border-yellow-500"
+                ? "border-2 border-primary dark:border-darkmode-primary"
                 : "border border-border dark:border-light"
                 }`}
             >

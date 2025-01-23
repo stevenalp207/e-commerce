@@ -108,13 +108,13 @@ const Testimonials = ({
               >
                 <div
                   ref={prevRef}
-                  className="p-2 lg:p-4 rounded-md bg-body cursor-pointer shadow-sm"
+                  className="p-2 lg:p-4 rounded-md bg-primary text-darkmode-dark dark:bg-darkmode-primary dark:text-dark cursor-pointer shadow-sm"
                 >
                   <HiOutlineArrowNarrowLeft size={24} />
                 </div>
                 <div
                   ref={nextRef}
-                  className="p-2 lg:p-4 rounded-md bg-body cursor-pointer shadow-sm"
+                  className="p-2 lg:p-4 rounded-md bg-primary text-darkmode-dark dark:bg-darkmode-primary dark:text-dark cursor-pointer shadow-sm"
                 >
                   <HiOutlineArrowNarrowRight size={24} />
                 </div>

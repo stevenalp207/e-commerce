@@ -23,11 +23,11 @@
 // }
 
 .nav-link {
-  @apply block p-3 font-bold text-2xl transition text-light hover:text-dark dark:text-darkmode-text dark:hover:text-darkmode-primary lg:px-2 lg:py-3 cursor-pointer;
+  @apply block p-3 font-bold text-2xl transition text-light hover:text-primary dark:text-darkmode-text dark:hover:text-darkmode-primary lg:px-2 lg:py-3 cursor-pointer;
 }
 
 .nav-active {
-  @apply text-dark dark:text-darkmode-dark;
+  @apply text-primary dark:text-darkmode-dark;
 }
 
 .nav-dropdown {
@@ -71,7 +71,7 @@
 
 // search style
 .search-icon {
-  @apply cursor-pointer transition text-white dark:text-black bg-black dark:bg-white;
+  @apply cursor-pointer transition text-white dark:text-black bg-primary dark:bg-darkmode-primary;
 }
 
 .search-modal {
@@ -89,5 +89,5 @@
 
 // footer items
 .footer-link {
-  @apply text-sm md:text-base font-medium transition text-light hover:text-dark dark:text-darkmode-text dark:hover:text-darkmode-primary;
+  @apply text-sm md:text-base font-medium transition text-light hover:text-primary dark:text-darkmode-text dark:hover:text-darkmode-primary;
 }
