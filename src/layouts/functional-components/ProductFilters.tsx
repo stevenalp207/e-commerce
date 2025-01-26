@@ -106,41 +106,43 @@ const ProductFilters = ({
           <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">Marcas</h5>
           <hr className="dark:border-darkmode-border" />
           <ul className="mt-4 space-y-4">
-            {vendors.map((vendor) => (
-              <li
-                key={vendor.vendor}
-                className={`flex items-center justify-between cursor-pointer text-light dark:text-darkmode-light`}
-                onClick={() => handleBrandClick(vendor.vendor)}
-              >
-                {searchParams.has("b") &&
+            {vendors
+              .filter((vendor) => vendor.vendor.toLowerCase() !== "style-up-cr") // Excluir "style-up-cr"
+              .map((vendor) => (
+                <li
+                  key={vendor.vendor}
+                  className={`flex items-center justify-between cursor-pointer text-light dark:text-darkmode-light`}
+                  onClick={() => handleBrandClick(vendor.vendor)}
+                >
+                  {searchParams.has("b") &&
                   !searchParams.has("c") &&
                   !searchParams.has("minPrice") &&
                   !searchParams.has("maxPrice") &&
                   !searchParams.has("q") &&
                   !searchParams.has("t") ? (
-                  <span>
-                    {vendor.vendor} ({vendor.productCount})
-                  </span>
-                ) : (
-                  <span>
-                    {vendorsWithCounts.length > 0
-                      ? `${vendor.vendor} (${vendorsWithCounts.find(
-                        (v) => v.vendor === vendor.vendor
-                      )?.productCount || 0
-                      })`
-                      : `${vendor.vendor} (${vendor.productCount})`}
-                  </span>
-                )}
-                <div className="h-4 w-4 rounded-sm flex items-center justify-center border border-light dark:border-darkmode-light">
-                  {selectedBrands.includes(slugify(vendor.vendor.toLowerCase())) && (
-                    <BsCheckLg size={16} />
+                    <span>
+                      {vendor.vendor} ({vendor.productCount})
+                    </span>
+                  ) : (
+                    <span>
+                      {vendorsWithCounts.length > 0
+                        ? `${vendor.vendor} (${vendorsWithCounts.find(
+                            (v) => v.vendor === vendor.vendor
+                          )?.productCount || 0})`
+                        : `${vendor.vendor} (${vendor.productCount})`}
+                    </span>
                   )}
-                </div>
-              </li>
-            ))}
+                  <div className="h-4 w-4 rounded-sm flex items-center justify-center border border-light dark:border-darkmode-light">
+                    {selectedBrands.includes(slugify(vendor.vendor.toLowerCase())) && (
+                      <BsCheckLg size={16} />
+                    )}
+                  </div>
+                </li>
+              ))}
           </ul>
         </div>
       )}
+
 
       {tags.length > 0 && (
         <div>
