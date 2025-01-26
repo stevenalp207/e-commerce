@@ -33,6 +33,7 @@ let productsData: any;
 let vendorsWithCounts: { vendor: string; productCount: number }[] = [];
 let categoriesWithCounts: { category: string; productCount: number }[] = [];
 
+// Fetch products
 if (searchValue || brand || minPrice || maxPrice || category || tag) {
   let queryString = "";
 
@@ -124,6 +125,11 @@ if (searchValue || brand || minPrice || maxPrice || category || tag) {
   }
 }
 
+// Exclude products with the brand "style-up-cr"
+const filteredProducts = (productsData?.products || []).filter(
+  (product: Product) => product.vendor.toLowerCase() !== "style-up-cr"
+);
+
 const categories = await getCollections();
 const vendors = await getVendors({});
 
@@ -137,7 +143,7 @@ const tags = [
 
 const maxPriceData = await getHighestProductPrice();
 
-const initialProducts = productsData.products;
+const initialProducts = filteredProducts; // Use the filtered products
 const initialPageInfo = productsData.pageInfo;
 ---
 

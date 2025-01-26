@@ -36,7 +36,11 @@ const HeroSlider = ({ products }: { products: Product[] }) => {
                   {item.handle && (
                     <a
                       className="btn btn-sm md:btn-lg btn-primary font-medium"
-                      href={`productos/${item.handle}`}
+                      href={
+                        item.vendor === "style-up-cr"
+                          ? `productos?c=featured-products`
+                          : `productos/${item.handle}`
+                      }
                     >
                       Compra ahora
                     </a>
