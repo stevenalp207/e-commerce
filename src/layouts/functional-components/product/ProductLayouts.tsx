@@ -22,6 +22,7 @@ const ProductLayouts = ({
 }: any) => {
   const { getCollapseProps, getToggleProps, isExpanded, setExpanded } = useCollapse();
   const [isInputEditing, setInputEditing] = useState(false);
+  const [hasActiveFilters, setHasActiveFilters] = useState(false); // Estado para saber si hay filtros activos
   const layout = useStore(layoutView);
 
   const layoutChange = (isCard: string) => {
@@ -39,8 +40,18 @@ const ProductLayouts = ({
   
     // 3. Recarga la página para reflejar los cambios
     window.location.reload(); // Recarga la página con la URL limpia
+    setHasActiveFilters(false); // Actualiza el estado de filtros activos
   };
-  
+
+  // Suponiendo que la lógica de los filtros modifica la URL, actualizamos el estado de hasActiveFilters
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.toString()) {
+      setHasActiveFilters(true);
+    } else {
+      setHasActiveFilters(false);
+    }
+  }, [window.location.search]);
 
   useEffect(() => {
     const inputField = document.getElementById("searchInput") as HTMLInputElement;
@@ -116,17 +127,20 @@ const ProductLayouts = ({
 
                 <div className="filter-button-container block mt-1">
                   <button
-                  {...getToggleProps()}
-                    onClick={resetFilters}>
-                      <span className="font-medium text-base flex gap-x-1 items-center justify-center">
-                        <TbFilterCancel /> Eliminar filtros
-                      </span>
-                    </button>
-                  </div>
+                    {...getToggleProps()}
+                    onClick={resetFilters}
+                    disabled={!hasActiveFilters} // Deshabilitar el botón si no hay filtros activos
+                    className={`${
+                      !hasActiveFilters ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
+                  >
+                    <span className="font-medium text-base flex gap-x-1 items-center justify-center">
+                      <TbFilterCancel /> Eliminar filtros
+                    </span>
+                  </button>
+                </div>
 
-
-
-                <div className="flex gap-x-4 items-center font-medium text-sm md:text-base relative z-20">
+                <div className="flex gap-x-4 items-center font-medium text-sm md:text-base relative ">
                   <p className="max-md:hidden text-dark dark:text-darkmode-dark">
                     Filtrar por
                   </p>
