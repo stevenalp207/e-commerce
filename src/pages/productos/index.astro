@@ -127,7 +127,7 @@ if (searchValue || brand || minPrice || maxPrice || category || tag) {
 
 // Exclude products with the brand "style-up-cr"
 const filteredProducts = (productsData?.products || []).filter(
-  (product: Product) => product.vendor.toLowerCase() !== "style-up-cr"
+  (product: Product) => product.vendor.toLowerCase() !== "style-up-cr",
 );
 
 const categories = await getCollections();

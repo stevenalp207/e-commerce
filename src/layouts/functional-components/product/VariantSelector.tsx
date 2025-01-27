@@ -22,12 +22,18 @@ export const generateImageMap = (images: ImageItem[]) => {
   return imageMap;
 };
 
-export function VariantSelector({ options, variants, images }: {
+export function VariantSelector({
+  options,
+  variants,
+  images,
+}: {
   options: ProductOption[];
   variants: ProductVariant[];
   images: ImageItem[];
 }) {
-  const [selectedOptions, setSelectedOptions] = useState<Record<string, string | undefined>>({
+  const [selectedOptions, setSelectedOptions] = useState<
+    Record<string, string | undefined>
+  >({
     color: undefined,
     size: undefined,
   });
@@ -44,7 +50,11 @@ export function VariantSelector({ options, variants, images }: {
   const updateUrl = (param: string, value: string) => {
     const params = new URLSearchParams(window.location.search);
     params.set(param, value);
-    window.history.replaceState({}, "", `${window.location.pathname}?${params.toString()}`);
+    window.history.replaceState(
+      {},
+      "",
+      `${window.location.pathname}?${params.toString()}`,
+    );
   };
 
   const handleOptionChange = (optionName: string, value: string) => {
@@ -63,13 +73,14 @@ export function VariantSelector({ options, variants, images }: {
         ...accumulator,
         [option.name.toLowerCase()]: option.value,
       }),
-      {}
+      {},
     ),
   }));
 
   // Filter out options where name is "Title" and values are ["Default Title"]
   const filteredOptions = options.filter(
-    (option) => !(option.name === "Title" && option.values.includes("Default Title"))
+    (option) =>
+      !(option.name === "Title" && option.values.includes("Default Title")),
   );
 
   const sizeOption = options.find((option) => option.name === "Size");
@@ -87,7 +98,7 @@ export function VariantSelector({ options, variants, images }: {
               const isAvailableForSale = combinations.find(
                 (combination: Combination) =>
                   combination[optionNameLowerCase] === value &&
-                  combination.availableForSale
+                  combination.availableForSale,
               );
 
               const isActive = selectedOptions[optionNameLowerCase] === value;
@@ -101,23 +112,31 @@ export function VariantSelector({ options, variants, images }: {
                   <button
                     aria-disabled={!isAvailableForSale}
                     disabled={!isAvailableForSale}
-                    onClick={() => handleOptionChange(optionNameLowerCase, value)}
+                    onClick={() =>
+                      handleOptionChange(optionNameLowerCase, value)
+                    }
                     title={`${option.name} ${value}${!isAvailableForSale ? " (Out of Stock)" : ""}`}
-                    className={`flex min-w-[48px] items-center justify-center rounded-md border text-sm ${isActive && option.name !== "Color"
-                      ? "cursor-default ring-2 ring-dark dark:ring-darkmode-dark"
-                      : ""
-                      } ${!isActive && isAvailableForSale && option.name !== "Color"
+                    className={`flex min-w-[48px] items-center justify-center rounded-md border text-sm ${
+                      isActive && option.name !== "Color"
+                        ? "cursor-default ring-2 ring-dark dark:ring-darkmode-dark"
+                        : ""
+                    } ${
+                      !isActive && isAvailableForSale && option.name !== "Color"
                         ? "ring-1 ring-transparent transition duration-300 ease-in-out hover:scale-110 hover:ring-dark hover:dark:ring-darkmode-dark"
                         : ""
-                      } ${!isAvailableForSale
+                    } ${
+                      !isAvailableForSale
                         ? "relative z-10 cursor-not-allowed overflow-hidden bg-neutral-100 text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400"
                         : ""
-                      }`}
+                    }`}
                   >
                     {option.name === "Color" ? (
                       <div
-                        className={`relative rounded-md overflow-hidden ${isActive ? "outline outline-1 outline-dark dark:outline-darkmode-dark" : ""
-                          }`}
+                        className={`relative rounded-md overflow-hidden ${
+                          isActive
+                            ? "outline outline-1 outline-dark dark:outline-darkmode-dark"
+                            : ""
+                        }`}
                       >
                         <img
                           src={imageMap[value]}
@@ -145,7 +164,9 @@ export function VariantSelector({ options, variants, images }: {
 
       {sizeOption && (
         <div className="mb-8 mt-8">
-        <h5 className="mb-2 max-md:text-base">{sizeOption.name === "Size" ? "Tamaño" : sizeOption.name}</h5>
+          <h5 className="mb-2 max-md:text-base">
+            {sizeOption.name === "Size" ? "Tamaño" : sizeOption.name}
+          </h5>
           <VariantDropDown
             sizeOption={sizeOption}
             selectedSize={selectedOptions.size}

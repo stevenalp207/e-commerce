@@ -3,7 +3,6 @@ import MultiRangeSlider from "multi-range-slider-react";
 import React, { useEffect, useState } from "react";
 import "./rangeSlider.css";
 
-
 function createUrl(path: string, params: URLSearchParams) {
   return `${path}?${params.toString()}`;
 }
@@ -23,7 +22,7 @@ const RangeSlider = ({
     const searchParams = new URLSearchParams(window.location.search);
     const minPrice = parseInt(searchParams.get("minPrice") || "0");
     const maxPrice = parseInt(
-      searchParams.get("maxPrice") || maxPriceData?.amount
+      searchParams.get("maxPrice") || maxPriceData?.amount,
     );
 
     setMinValue(minPrice);

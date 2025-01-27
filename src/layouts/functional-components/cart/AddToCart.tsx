@@ -84,7 +84,9 @@ export function AddToCart({
 }: AddToCartProps) {
   const [message, setMessage] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
-  const [selectedVariantId, setSelectedVariantId] = useState<string | undefined>(defaultVariantId);
+  const [selectedVariantId, setSelectedVariantId] = useState<
+    string | undefined
+  >(defaultVariantId);
   const lastUrl = useRef(window.location.href);
 
   // Function to update selectedVariantId based on URL

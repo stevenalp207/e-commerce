@@ -13,14 +13,18 @@ const SearchBar = () => {
       setInputEditing(true);
     }
 
-    const inputField = document.getElementById("searchInput") as HTMLInputElement;
+    const inputField = document.getElementById(
+      "searchInput",
+    ) as HTMLInputElement;
     if (isInputEditing || query) {
       inputField.focus();
     }
   }, [isInputEditing]);
 
   const updateURL = (query: string) => {
-    const newURL = query ? `/productos?q=${encodeURIComponent(query)}` : '/productos';
+    const newURL = query
+      ? `/productos?q=${encodeURIComponent(query)}`
+      : "/productos";
     // window.history.pushState({}, '', newURL);
     window.location.href = newURL.toString();
   };
@@ -46,7 +50,10 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="border border-border dark:border-darkmode-border rounded-full flex bg-light/10 pl-4 relative">
+    <form
+      onSubmit={onSubmit}
+      className="border border-border dark:border-darkmode-border rounded-full flex bg-light/10 pl-4 relative"
+    >
       <input
         type="text"
         name="search"

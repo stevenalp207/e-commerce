@@ -61,7 +61,7 @@ const CollectionsSlider = ({ collections }: { collections: any }) => {
         onInit={() => setInit(true)}
       >
         {collectionsData?.map((item: any) => {
-          const { title, handle, image, } = item;
+          const { title, handle, image } = item;
           return (
             <SwiperSlide key={handle}>
               <div className="text-center relative">
@@ -91,10 +91,11 @@ const CollectionsSlider = ({ collections }: { collections: any }) => {
         })}
 
         <div
-          className={`hidden md:block w-full absolute top-[33%] z-10 px-4 text-dark ${isHovered
-            ? "opacity-100 transition-opacity duration-300 ease-in-out"
-            : "opacity-0 transition-opacity duration-300 ease-in-out"
-            }`}
+          className={`hidden md:block w-full absolute top-[33%] z-10 px-4 text-dark ${
+            isHovered
+              ? "opacity-100 transition-opacity duration-300 ease-in-out"
+              : "opacity-0 transition-opacity duration-300 ease-in-out"
+          }`}
         >
           <div
             ref={prevRef}

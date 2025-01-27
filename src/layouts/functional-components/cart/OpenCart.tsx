@@ -6,7 +6,10 @@ interface OpenCartProps {
   quantity?: number;
 }
 
-const OpenCart: React.FC<OpenCartProps> = ({ className = "", quantity = 0 }) => {
+const OpenCart: React.FC<OpenCartProps> = ({
+  className = "",
+  quantity = 0,
+}) => {
   return (
     <div className="relative text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white">
       <BsBag className={`dark:hover:text-darkmode-primary ${className}`} />

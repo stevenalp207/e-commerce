@@ -25,7 +25,6 @@ Los pagos deberán realizarse en colones de Costa Rica (CRC).
 
 <br/>
 
-
 #### Disponibilidad del Producto
 
 StyleUP Costa Rica se esfuerza por mantener la mayoría de los artículos disponibles en stock. Si un artículo que ordenas está fuera de stock, nos pondremos en contacto contigo con la fecha estimada de disponibilidad. Puedes optar por cancelar el pedido o esperar hasta que el artículo esté disponible nuevamente.
@@ -59,7 +58,6 @@ StyleUP Costa RIca no se hace responsable de daños de ningún tipo, ya sean com
 #### Seguridad de la Tarjeta de Crédito
 
 Nos tomamos la seguridad en línea muy en serio y hemos tomado varias medidas para garantizar que tu información de pago se procese de manera confidencial y precisa. Utilizamos las formas de pago originales brindadas por el Banco Nacional de Costa Rica (BNCR)
-
 
 <br/>
 

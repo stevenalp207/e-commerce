@@ -94,7 +94,9 @@ const SignUpForm = () => {
           <div className="col-11 sm:col-9 md:col-7 mx-auto">
             <div className="mb-14 text-center">
               <h2 className="max-md:h1 md:mb-2">Crear una cuenta</h2>
-              <p className="md:text-lg">Crea una cuenta para comprar productos</p>
+              <p className="md:text-lg">
+                Crea una cuenta para comprar productos
+              </p>
             </div>
 
             <form onSubmit={handleSignUp}>
@@ -142,7 +144,11 @@ const SignUpForm = () => {
                     className="absolute right-3 text-gray-500"
                     aria-label="Mostrar contraseña"
                   >
-                    {showPassword ? <FiEyeOff size={25} /> : <FiEye size={25} />}
+                    {showPassword ? (
+                      <FiEyeOff size={25} />
+                    ) : (
+                      <FiEye size={25} />
+                    )}
                   </button>
                 </div>
                 <p

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { FilterDropdownItem } from "./FilterDropdownItem";
 import type { ListItem } from "../product/ProductLayouts";
 
-
 const DropdownMenu = ({ list }: { list: ListItem[] }) => {
   const [active, setActive] = useState<string>("");
   const [openSelect, setOpenSelect] = useState<boolean>(false);
@@ -46,8 +45,9 @@ const DropdownMenu = ({ list }: { list: ListItem[] }) => {
       >
         <div>{active}</div>
         <svg
-          className={`-mr-1 h-5 w-5 text-gray-400 transform ${openSelect ? "rotate-180" : ""
-            } transition-transform`}
+          className={`-mr-1 h-5 w-5 text-gray-400 transform ${
+            openSelect ? "rotate-180" : ""
+          } transition-transform`}
           fill="currentColor"
           viewBox="0 0 20 20"
           aria-hidden="true"

@@ -3,7 +3,7 @@ import { slugify } from "@/lib/utils/textConverter";
 
 const ShowTags = ({ tags }: { tags: string[] }) => {
   const [searchParams, setSearchParams] = useState(
-    new URLSearchParams(window.location.search)
+    new URLSearchParams(window.location.search),
   );
   const selectedTag = searchParams.get("t");
 
@@ -35,9 +35,10 @@ const ShowTags = ({ tags }: { tags: string[] }) => {
       {tags.map((tag) => (
         <p
           key={tag}
-          className={`px-2 py-1 rounded-md border border-border dark:border-light text-light dark:text-darkmode-light ${selectedTag === slugify(tag.toLowerCase()) &&
+          className={`px-2 py-1 rounded-md border border-border dark:border-light text-light dark:text-darkmode-light ${
+            selectedTag === slugify(tag.toLowerCase()) &&
             "bg-theme-light dark:bg-theme-dark"
-            }`}
+          }`}
           onClick={() => handleTagClick(tag)}
         >
           {tag}

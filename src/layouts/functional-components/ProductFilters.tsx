@@ -21,7 +21,7 @@ const ProductFilters = ({
   categoriesWithCounts: { category: string; productCount: number }[];
 }) => {
   const [searchParams, setSearchParams] = useState(
-    new URLSearchParams(window.location.search)
+    new URLSearchParams(window.location.search),
   );
 
   const selectedBrands = searchParams.getAll("b");
@@ -69,29 +69,35 @@ const ProductFilters = ({
       </div>
 
       <div>
-        <h5 className="mb-2 mt-4 lg:mt-6 lg:text-xl">Categorías de Productos</h5>
+        <h5 className="mb-2 mt-4 lg:mt-6 lg:text-xl">
+          Categorías de Productos
+        </h5>
         <hr className="dark:border-darkmode-border" />
         <ul className="mt-4 space-y-4">
           {categories.map((category) => (
             <li
               key={category.handle}
-              className={`flex items-center justify-between cursor-pointer ${selectedCategory === category.handle
-                ? "text-dark dark:text-darkmode-dark font-semibold"
-                : "text-light dark:text-darkmode-light"
-                }`}
+              className={`flex items-center justify-between cursor-pointer ${
+                selectedCategory === category.handle
+                  ? "text-dark dark:text-darkmode-dark font-semibold"
+                  : "text-light dark:text-darkmode-light"
+              }`}
               onClick={() => handleCategoryClick(category.handle)}
             >
-              {category.handle === "featured-products" ? "Productos destacados" : category.title}
-              
+              {category.handle === "featured-products"
+                ? "Productos destacados"
+                : category.title}
+
               {searchParams.has("c") && !searchParams.has("b") ? (
                 <span>({category?.products?.edges.length || 0})</span>
               ) : (
                 <span>
                   {categoriesWithCounts.length > 0
-                    ? `(${categoriesWithCounts.find(
-                      (c) => c.category === category.title
-                    )?.productCount || 0
-                    })`
+                    ? `(${
+                        categoriesWithCounts.find(
+                          (c) => c.category === category.title,
+                        )?.productCount || 0
+                      })`
                     : `(${category?.products?.edges.length || 0})`}
                 </span>
               )}
@@ -100,20 +106,20 @@ const ProductFilters = ({
         </ul>
       </div>
 
-
       {vendors && (
         <div>
           <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">Marcas</h5>
           <hr className="dark:border-darkmode-border" />
           <ul className="mt-4 space-y-4">
-            {vendors.filter((vendor) => vendor.vendor.toLowerCase() !== "style-up-cr") // Excluir "style-up-cr"
+            {vendors
+              .filter((vendor) => vendor.vendor.toLowerCase() !== "style-up-cr") // Excluir "style-up-cr"
               .map((vendor) => (
                 <li
                   key={vendor.vendor}
                   className={`flex items-center justify-between cursor-pointer text-light dark:text-darkmode-light`}
                   onClick={() => handleBrandClick(vendor.vendor)}
                 >
-                {searchParams.has("b") &&
+                  {searchParams.has("b") &&
                   !searchParams.has("c") &&
                   !searchParams.has("minPrice") &&
                   !searchParams.has("maxPrice") &&
@@ -125,24 +131,24 @@ const ProductFilters = ({
                   ) : (
                     <span>
                       {vendorsWithCounts.length > 0
-                        ? `${vendor.vendor} (${vendorsWithCounts.find(
-                            (v) => v.vendor === vendor.vendor
-                          )?.productCount || 0
-                        })`
+                        ? `${vendor.vendor} (${
+                            vendorsWithCounts.find(
+                              (v) => v.vendor === vendor.vendor,
+                            )?.productCount || 0
+                          })`
                         : `${vendor.vendor} (${vendor.productCount})`}
                     </span>
                   )}
                   <div className="h-4 w-4 rounded-sm flex items-center justify-center border border-light dark:border-darkmode-light">
-                    {selectedBrands.includes(slugify(vendor.vendor.toLowerCase())) && (
-                      <BsCheckLg size={16} />
-                    )}
+                    {selectedBrands.includes(
+                      slugify(vendor.vendor.toLowerCase()),
+                    ) && <BsCheckLg size={16} />}
                   </div>
                 </li>
               ))}
           </ul>
         </div>
       )}
-
 
       {tags.length > 0 && (
         <div>

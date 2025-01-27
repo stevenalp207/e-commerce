@@ -10,7 +10,7 @@ const ProductGrid = ({
   initialPageInfo,
   sortKey,
   reverse,
-  searchValue
+  searchValue,
 }: {
   initialProducts: Product[];
   initialPageInfo: PageInfo;
@@ -28,7 +28,8 @@ const ProductGrid = ({
   const loaderRef = useRef(null);
 
   const getSortParams = (sortKey: string) => {
-    const sortOption = sorting.find((item) => item.slug === sortKey) || defaultSort;
+    const sortOption =
+      sorting.find((item) => item.slug === sortKey) || defaultSort;
     return { sortKey: sortOption.sortKey, reverse: sortOption.reverse };
   };
 
@@ -38,10 +39,11 @@ const ProductGrid = ({
     setLoading(true);
     try {
       const response = await fetch(
-        `/api/productos.json?cursor=${pageInfo.endCursor || ""}&sortKey=${currentSortKey}&reverse=${currentReverse}`
+        `/api/productos.json?cursor=${pageInfo.endCursor || ""}&sortKey=${currentSortKey}&reverse=${currentReverse}`,
       );
       if (!response.ok) throw new Error("Failed to fetch");
-      const { products: newProducts, pageInfo: newPageInfo } = await response.json();
+      const { products: newProducts, pageInfo: newPageInfo } =
+        await response.json();
 
       setProducts((prevProducts) => [...prevProducts, ...newProducts]);
       setPageInfo(newPageInfo);
@@ -57,7 +59,8 @@ const ProductGrid = ({
     const params = new URLSearchParams(window.location.search);
     const newSortKey = params.get("sortKey") || sortKey;
 
-    const { sortKey: mappedSortKey, reverse: mappedReverse } = getSortParams(newSortKey);
+    const { sortKey: mappedSortKey, reverse: mappedReverse } =
+      getSortParams(newSortKey);
 
     // Update only if URL params differ from current state
     if (mappedSortKey !== currentSortKey || mappedReverse !== currentReverse) {
@@ -90,7 +93,7 @@ const ProductGrid = ({
             loadMoreProducts();
           }
         },
-        { threshold: 1.0 }
+        { threshold: 1.0 },
       );
 
       if (loaderRef.current) {
@@ -110,7 +113,6 @@ const ProductGrid = ({
   return (
     <div>
       <div className="row mx-auto">
-
         {searchValue ? (
           <p className="mb-4">
             {products.length === 0
@@ -119,7 +121,6 @@ const ProductGrid = ({
             <span className="font-bold">&quot;{searchValue}&quot;</span>
           </p>
         ) : null}
-
 
         {products?.length === 0 && (
           <div className="mx-auto pt-5 text-center">
@@ -132,7 +133,8 @@ const ProductGrid = ({
             />
             <h1 className="h2 mb-4">¡Producto no encontrado!</h1>
             <p>
-              Lo sentimos, no pudimos encontrar el producto que buscabas. Intenta buscar otro.
+              Lo sentimos, no pudimos encontrar el producto que buscabas.
+              Intenta buscar otro.
             </p>
           </div>
         )}
@@ -198,12 +200,16 @@ const ProductGrid = ({
                 </div>
               </div>
             </div>
-          )
+          );
         })}
       </div>
       {pageInfo?.hasNextPage && (
         <div ref={loaderRef} className="text-center py-4 flex justify-center">
-          {loading ? <BiLoaderAlt className={`animate-spin`} size={30} /> : "Baja para ver más"}
+          {loading ? (
+            <BiLoaderAlt className={`animate-spin`} size={30} />
+          ) : (
+            "Baja para ver más"
+          )}
         </div>
       )}
     </div>

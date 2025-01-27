@@ -47,8 +47,9 @@ const EditItemQuantityButton: React.FC<Props> = ({ item, type }) => {
         }
         aria-disabled={pending}
         disabled={pending}
-        className={`ease flex h-full min-w-[36px] max-w-[36px] items-center justify-center rounded-full px-2 transition-all duration-200 hover:border-neutral-800 hover:opacity-80 ${type === "minus" ? "ml-auto" : ""
-          } ${pending ? "cursor-not-allowed opacity-50" : ""}`}
+        className={`ease flex h-full min-w-[36px] max-w-[36px] items-center justify-center rounded-full px-2 transition-all duration-200 hover:border-neutral-800 hover:opacity-80 ${
+          type === "minus" ? "ml-auto" : ""
+        } ${pending ? "cursor-not-allowed opacity-50" : ""}`}
       >
         {pending ? (
           <LoadingDots className="bg-black dark:bg-white" />

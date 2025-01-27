@@ -41,8 +41,15 @@ const { products: featuredProducts } = await getCollectionProducts({
       <div class="text-center mb-6 md:mb-14">
         <h2>Colecciones</h2>
       </div>
-      {/* Filtrar productos para asegurarse de que los productos destacados no aparezcan aquí */}
-      <CollectionsSlider client:load collections={collectionProducts.filter(collection => collection.handle !== collections.featured_products)} />
+      {
+        /* Filtrar productos para asegurarse de que los productos destacados no aparezcan aquí */
+      }
+      <CollectionsSlider
+        client:load
+        collections={collectionProducts.filter(
+          (collection) => collection.handle !== collections.featured_products,
+        )}
+      />
     </div>
   </section>
 

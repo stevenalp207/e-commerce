@@ -54,10 +54,7 @@ const NavUser = ({ pathname }: { pathname: string }) => {
         >
           <div className="flex items-center gap-x-1">
             <div className="h-6 w-6 border border-darkmode-border dark:border-border rounded-full">
-              <Gravatar
-                email={user?.email}
-                style={{ borderRadius: "50px" }}
-              />
+              <Gravatar email={user?.email} style={{ borderRadius: "50px" }} />
             </div>
             <div className="leading-none max-md:hidden">
               <div className="flex items-center">
@@ -89,7 +86,10 @@ const NavUser = ({ pathname }: { pathname: string }) => {
 
       {dropdownOpen && (
         <div className="z-20 text-center absolute w-36 bg-white dark:bg-[#252525] shadow-md rounded mt-2 right-0">
-          <button onClick={handleLogout} className="btn btn-primary max-md:btn-sm mt-2">
+          <button
+            onClick={handleLogout}
+            className="btn btn-primary max-md:btn-sm mt-2"
+          >
             Cerrar sesión
           </button>
         </div>

@@ -20,7 +20,8 @@ const ProductLayouts = ({
   vendorsWithCounts,
   categoriesWithCounts,
 }: any) => {
-  const { getCollapseProps, getToggleProps, isExpanded, setExpanded } = useCollapse();
+  const { getCollapseProps, getToggleProps, isExpanded, setExpanded } =
+    useCollapse();
   const [isInputEditing, setInputEditing] = useState(false);
   const [hasActiveFilters, setHasActiveFilters] = useState(false); // Estado para saber si hay filtros activos
   const layout = useStore(layoutView);
@@ -34,10 +35,10 @@ const ProductLayouts = ({
     const url = new URL(window.location.href);
     url.search = ""; // Elimina todos los parámetros
     window.history.pushState({}, "", url.toString());
-  
+
     // 2. Reinicia el estado interno de los filtros (opcional, si tienes estados locales o globales)
     setExpanded(false); // Cierra el filtro colapsable (si aplica)
-  
+
     // 3. Recarga la página para reflejar los cambios
     window.location.reload(); // Recarga la página con la URL limpia
     setHasActiveFilters(false); // Actualiza el estado de filtros activos
@@ -54,8 +55,13 @@ const ProductLayouts = ({
   }, [window.location.search]);
 
   useEffect(() => {
-    const inputField = document.getElementById("searchInput") as HTMLInputElement;
-    if (isInputEditing || new URLSearchParams(window.location.search).get("q")) {
+    const inputField = document.getElementById(
+      "searchInput",
+    ) as HTMLInputElement;
+    if (
+      isInputEditing ||
+      new URLSearchParams(window.location.search).get("q")
+    ) {
       inputField?.focus();
     }
   }, [isInputEditing]);
@@ -95,15 +101,17 @@ const ProductLayouts = ({
                 <div className="flex gap-2">
                   <button
                     onClick={() => layoutChange("card")}
-                    className={`btn border dark:border-darkmode-border ${layout === "list" ? "btn-outline-primary" : "btn-primary"
-                      } p-2 hover:scale-105 duration-300`}
+                    className={`btn border dark:border-darkmode-border ${
+                      layout === "list" ? "btn-outline-primary" : "btn-primary"
+                    } p-2 hover:scale-105 duration-300`}
                   >
                     <BsGridFill />
                   </button>
                   <button
                     onClick={() => layoutChange("list")}
-                    className={`btn border dark:border-darkmode-border ${layout === "list" ? "btn-primary" : "btn-outline-primary"
-                      } p-2 hover:scale-105 duration-300`}
+                    className={`btn border dark:border-darkmode-border ${
+                      layout === "list" ? "btn-primary" : "btn-outline-primary"
+                    } p-2 hover:scale-105 duration-300`}
                   >
                     <FaList />
                   </button>

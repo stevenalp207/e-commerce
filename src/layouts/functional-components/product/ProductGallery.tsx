@@ -33,7 +33,7 @@ const ProductGallery = ({ images }: { images: ImageItem[] }) => {
 
   const altTextArray = images.map((item) => item.altText);
   const filteredImages = images.filter(
-    (item) => item.altText === altTextArray[activeIndex]
+    (item) => item.altText === altTextArray[activeIndex],
   );
 
   // Listen to URL changes using popstate and polling
@@ -77,7 +77,7 @@ const ProductGallery = ({ images }: { images: ImageItem[] }) => {
 
   const handleThumbSlideClick = (clickedUrl: string) => {
     const foundIndex = filteredImages.findIndex(
-      (item) => item.url === clickedUrl
+      (item) => item.url === clickedUrl,
     );
     if (foundIndex !== -1) {
       setActiveIndex(foundIndex);
@@ -119,10 +119,11 @@ const ProductGallery = ({ images }: { images: ImageItem[] }) => {
             </SwiperSlide>
           ))}
           <div
-            className={`hidden lg:block w-full absolute top-1/2 -translate-y-1/2 z-10 px-6 text-dark ${isHovered
-              ? "opacity-100 transition-opacity duration-300 ease-in-out"
-              : "opacity-0 transition-opacity duration-300 ease-in-out"
-              }`}
+            className={`hidden lg:block w-full absolute top-1/2 -translate-y-1/2 z-10 px-6 text-dark ${
+              isHovered
+                ? "opacity-100 transition-opacity duration-300 ease-in-out"
+                : "opacity-0 transition-opacity duration-300 ease-in-out"
+            }`}
           >
             <div
               ref={prevRef}
@@ -151,10 +152,11 @@ const ProductGallery = ({ images }: { images: ImageItem[] }) => {
           <SwiperSlide key={item.url}>
             <div
               onClick={() => handleThumbSlideClick(item.url)}
-              className={`rounded-md cursor-pointer overflow-hidden ${picUrl === item.url
-                ? "border-2 border-primary dark:border-darkmode-primary"
-                : "border border-border dark:border-light"
-                }`}
+              className={`rounded-md cursor-pointer overflow-hidden ${
+                picUrl === item.url
+                  ? "border-2 border-primary dark:border-darkmode-primary"
+                  : "border border-border dark:border-light"
+              }`}
             >
               <img
                 src={item.url}
