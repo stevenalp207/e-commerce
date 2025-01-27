@@ -4,7 +4,7 @@ import { useStore } from "@nanostores/react";
 import { layoutView, setLayoutView } from "@/cartStore";
 import { BsGridFill } from "react-icons/bs";
 import { FaList } from "react-icons/fa6";
-import { TbFilter, TbFilterX } from "react-icons/tb";
+import { TbFilter, TbFilterX, TbFilterCancel } from "react-icons/tb";
 import DropdownMenu from "../filter/DropdownMenu";
 import { type SortFilterItem, sorting } from "@/lib/constants";
 import ProductFilters from "../ProductFilters";
@@ -27,6 +27,20 @@ const ProductLayouts = ({
   const layoutChange = (isCard: string) => {
     setLayoutView(isCard === "list" ? "list" : "card");
   };
+
+  const resetFilters = () => {
+    // 1. Elimina los parámetros de la URL
+    const url = new URL(window.location.href);
+    url.search = ""; // Elimina todos los parámetros
+    window.history.pushState({}, "", url.toString());
+  
+    // 2. Reinicia el estado interno de los filtros (opcional, si tienes estados locales o globales)
+    setExpanded(false); // Cierra el filtro colapsable (si aplica)
+  
+    // 3. Recarga la página para reflejar los cambios
+    window.location.reload(); // Recarga la página con la URL limpia
+  };
+  
 
   useEffect(() => {
     const inputField = document.getElementById("searchInput") as HTMLInputElement;
@@ -99,6 +113,18 @@ const ProductLayouts = ({
                     )}
                   </button>
                 </div>
+
+                <div className="filter-button-container block mt-1">
+                  <button
+                  {...getToggleProps()}
+                    onClick={resetFilters}>
+                      <span className="font-medium text-base flex gap-x-1 items-center justify-center">
+                        <TbFilterCancel /> Eliminar filtros
+                      </span>
+                    </button>
+                  </div>
+
+
 
                 <div className="flex gap-x-4 items-center font-medium text-sm md:text-base relative z-20">
                   <p className="max-md:hidden text-dark dark:text-darkmode-dark">

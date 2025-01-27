@@ -106,15 +106,14 @@ const ProductFilters = ({
           <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">Marcas</h5>
           <hr className="dark:border-darkmode-border" />
           <ul className="mt-4 space-y-4">
-            {vendors
-              .filter((vendor) => vendor.vendor.toLowerCase() !== "style-up-cr") // Excluir "style-up-cr"
+            {vendors.filter((vendor) => vendor.vendor.toLowerCase() !== "style-up-cr") // Excluir "style-up-cr"
               .map((vendor) => (
                 <li
                   key={vendor.vendor}
                   className={`flex items-center justify-between cursor-pointer text-light dark:text-darkmode-light`}
                   onClick={() => handleBrandClick(vendor.vendor)}
                 >
-                  {searchParams.has("b") &&
+                {searchParams.has("b") &&
                   !searchParams.has("c") &&
                   !searchParams.has("minPrice") &&
                   !searchParams.has("maxPrice") &&
@@ -128,7 +127,8 @@ const ProductFilters = ({
                       {vendorsWithCounts.length > 0
                         ? `${vendor.vendor} (${vendorsWithCounts.find(
                             (v) => v.vendor === vendor.vendor
-                          )?.productCount || 0})`
+                          )?.productCount || 0
+                        })`
                         : `${vendor.vendor} (${vendor.productCount})`}
                     </span>
                   )}
